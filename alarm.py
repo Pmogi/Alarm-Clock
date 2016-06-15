@@ -7,11 +7,16 @@
 import time
 import webbrowser
 
+#The User can set the time they want to wake up. The String the user puts in must be the same as the example to work.
+print "What time do you want to wake up?"
+print "Use this form.\nExample: 06:30:00"
+Alarm = raw_input("> ")
+
+
 #I first need to state the Time variable so it's usable in the while-loop
 Time = time.strftime("%H:%M:%S")
 
-#This is the time that the alarm will go off
-Alarm = '09:47:00'
+
 
 #When the Time does not equal the Alarm time string given above, print the time
 while Time != Alarm:
@@ -23,7 +28,7 @@ while Time != Alarm:
 	Time = time.strftime("%H:%M:%S")
 	
 	#This keeps the loop from flooding the command line with updates of the time :P
-	time.sleep(60)
+	time.sleep(1)
 
 #If the Time variable is equal to the Alarm string, this code activates
 if Time == Alarm:
