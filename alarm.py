@@ -50,4 +50,5 @@ if Time == Alarm:
 	#from the variable content, a random link is chosen and then that link is stored in random_video variable
 	random_video = random.choice(content)
 	#Using the webbrowser library, it opens this youtube video link.
+	#The videos are varius aphex twin songs
 	webbrowser.open(random_video)
