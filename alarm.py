@@ -1,13 +1,5 @@
-# Alarm clock
-# Loop and print the time
-# Activate a youtube video if the time is equal 
-# Patrick Mogianesi /June 15th 2016/
-
-######################################################
-
-#When putting into command line, input, python Alarm.py YT.txt
-
-######################################################
+# Patrick Mogianesi
+# Updated /Augest 24 2016/
 
 # This stack  overflow helped http://stackoverflow.com/questions/3277503/how-to-read-a-file-line-by-line-into-a-list-with-python
 
@@ -15,15 +7,20 @@
 import time
 import webbrowser
 import random
+import os
+
+#Check if the user has the YT.txt file in the same area as alarm.py
+if os.path.isfile("YT.txt") == False:
+	print "ERROR: YT.txt file not present"
 
 #The User can set the time they want to wake up. The String the user puts in must be the same as the example to work.
 print "What time do you want to wake up?"
-print "Use this form.\nExample: 06:30:00"
+print "Use this form.\nExample: 06:30"
 Alarm = raw_input("> ")
 
 
 #I first need to state the Time variable so it's usable in the while-loop
-Time = time.strftime("%H:%M:%S")
+Time = time.strftime("%H:%M")
 
 #This opens the text file with the youtube links
 with open("YT.txt") as f:
@@ -38,7 +35,7 @@ while Time != Alarm:
 	
 	#Restating the Time variable allows the time to refresh
 	#When I tried keeping the variable outside of the loop it just repeated the inital time
-	Time = time.strftime("%H:%M:%S")
+	Time = time.strftime("%H:%M")
 	
 	#This keeps the loop from flooding the command line with updates of the time :P
 	time.sleep(1)
