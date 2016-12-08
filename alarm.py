@@ -9,9 +9,15 @@ import webbrowser
 import random
 import os
 
+
+
 #Check if the user has the YT.txt file in the same area as alarm.py
 if os.path.isfile("YT.txt") == False:
-	print "ERROR: YT.txt file not present"
+	print "ERROR: YT.txt file not present. Creating file..."
+	flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
+	filecreate = os.open("YT.txt", flags)
+	with os.fdopen(fisierCreat, 'w') as fileCreated:
+	    fileCreated.write("https://www.youtube.com/watch?v=2YllipGl2Is")
 
 #The User can set the time they want to wake up. The String the user puts in must be the same as the example to work.
 print "What time do you want to wake up?"
