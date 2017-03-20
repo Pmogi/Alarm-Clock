@@ -17,7 +17,7 @@ if os.path.isfile("YT.txt") == False:
 	flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
 	filecreate = os.open("YT.txt", flags)
 	with os.fdopen(fisierCreat, 'w') as fileCreated:
-	    fileCreated.write("https://www.youtube.com/watch?v=2YllipGl2Is")
+	    fileCreated.write("https://youtu.be/BZg8BhBWyo8")
 
 #The User can set the time they want to wake up. The String the user puts in must be the same as the example to work.
 print "What time do you want to wake up?"
